@@ -1,0 +1,283 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./font/Montserrat/Montserrat-VariableFont_wght.ttf") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../font/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("../font/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #444350;
+  max-height: 135px;
+}
+
+.header__wrapper-for-nav {
+  padding: 25px 315px;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  max-width: 190px;
+  max-height: 50px;
+}
+
+.header__map {
+  color: #ffffff;
+  max-width: 210px;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-left: 30px;
+  border-radius: 20px;
+  padding: 8px 20px;
+  /* Градиент */
+  background-image: linear-gradient(to right, #a87bfa, #367aca);
+  cursor: pointer;
+}
+.header__map img {
+  width: 20px;
+  height: 18px;
+  align-self: flex-start;
+}
+.header__map p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  margin-left: auto;
+  list-style: none;
+  margin-left: 35px;
+}
+.header__nav-list a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.header__wrapper__for-contacts {
+  margin: 0 0 0 37px;
+  display: flex;
+  column-gap: 8px;
+}
+
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header__contacts-text,
+.header__contacts-number {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header__contacts-number {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+}
+
+.header__contacts-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.header__contacts-text span {
+  color: #367aca;
+}
+
+.header__callback-button {
+  max-width: 150px;
+  max-height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-image: linear-gradient(to right, #a87bfa, #367aca);
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 20px;
+  text-align: center;
+  padding: 5px 16px 5px 24px;
+  cursor: pointer;
+}
+
+/* Отключаем прокрутку */
+.body--no-scroll {
+  overflow: hidden;
+}
+
+/* Модальное окно скрыто по умолчанию */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal--active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal--hidden {
+  display: none;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal__window {
+  position: relative;
+  background: #fff;
+  border-radius: 5px 30px 5px 30px;
+  padding: 24px 32px;
+  z-index: 10;
+  min-width: 300px;
+  max-width: 630px;
+  max-height: 511px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal__title {
+  font-size: 35px;
+  line-height: 45px;
+  font-size: 35px;
+  text-align: center;
+  font-family: "Lora", serif;
+  max-width: 470px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.modal__input {
+  max-width: 470px;
+  height: 70px;
+  border-radius: 5px 30px 5px 30px;
+  font-size: 16px;
+  border: 1px solid #DBDBDB;
+  padding-left: 36px;
+  box-sizing: border-box;
+}
+
+.modal__submit {
+  border-radius: 5px 30px 5px 30px;
+  border: none;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+  width: 470px;
+  height: 65px;
+  background-color: #367ACA;
+}
+
+.modal__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #A1A1A1;
+  margin-top: 26px;
+}
+
+.modal__text a {
+  all: unset;
+  color: inherit;
+  text-decoration: underline dotted;
+  cursor: pointer;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

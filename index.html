@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./IMG/header/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Стоматология</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__wrapper-for-nav">
+          <div class="header__logo">
+            <img src="./IMG/header/logo.png" alt="Логотип стоматологии" />
+          </div>
+          <div class="header__map">
+            <img
+              class="header__map-icon"
+              src="./IMG/header/map.png"
+              alt="Значёк карты"
+            />
+            <p class="header__map-text">3 Центра дентальной<br />хирургии</p>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item"><a href="#">Награды</a></li>
+              <li class="header__nav-item"><a href="#">О клинике</a></li>
+              <li class="header__nav-item"><a href="#">Расчёт</a></li>
+              <li class="header__nav-item"><a href="#">Наши врачи</a></li>
+              <li class="header__nav-item"><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="header__wrapper__for-contacts">
+            <img
+              src="./IMG/header/phone.png"
+              alt="Значёк телефона"
+              width="30"
+              height="30"
+            />
+            <div class="header__contacts">
+              <p class="header__contacts-number">+7 (345) 260-82-47</p>
+              <p class="header__contacts-text">
+                Ежедневно <span>с 9:00 до 21:00</span>
+              </p>
+              <button class="header__callback-button">Перезвонить мне</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Кнопка запуска -->
+      <button class="modal-trigger">Открыть модалку</button>
+
+      <!-- Блок модального окна -->
+      <div class="modal modal--hidden" id="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__window" role="dialog" aria-labelledby="modal-title">
+          <button
+            type="button"
+            class="modal__close"
+            aria-label="Закрыть модалку"
+          >
+            &times;
+          </button>
+
+          <form class="modal__form">
+            <h2 class="modal__title" id="modal-title">
+              Оставьте ваши контакты,<br />мы перезвоним в течение<br />15 минут
+            </h2>
+
+            <label for="modal-phone" class="visually-hidden">Ваш телефон</label>
+            <input
+              id="modal-phone"
+              type="tel"
+              class="modal__input"
+              placeholder="Ваш телефон"
+              required
+            />
+
+            <button type="submit" class="modal__submit">Заказать звонок</button>
+            <p class="modal__text">Нажимая на кнопку, вы соглашаетесь с условиями обработки<br /><a href="#">персональных данных</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
