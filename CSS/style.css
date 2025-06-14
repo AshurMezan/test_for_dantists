@@ -298,16 +298,20 @@
 .main__section--one {
   background-color: #41404d;
   width: 100%;
-  background-image: url("./IMG/main/section--one/hero.png");
+  padding-bottom: 150px;
 }
 
 .wrapper_one {
   max-width: 610px;
-  margin-left: 315px;
 }
 
 .section--one__wrapper_for_contents {
   padding-top: 160px;
+  max-width: 1290px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
 }
 
 .main_titel {
@@ -408,4 +412,69 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.wrapper_two__info {
+  position: relative;
+  background-color: #f3f3f3;
+  border: 1px solid hsla(0, 0%, 100%, 0.52);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border-radius: 16px;
+  padding: 41px 40px 32px;
+  max-width: 373px;
+  z-index: 1;
+}
+.wrapper_two__info .wrapper-two__text,
+.wrapper_two__info .wrapper-two__author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 34px;
+  color: #444c54;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+  color: #444c54;
+  font-size: 24px;
+  font-weight: 400;
+}
+.title span {
+  font-weight: 700;
+}
+
+.wrapper-two__text,
+.wrapper-two__author {
+  margin-top: 10px;
+}
+
+.wrapper_two__info p span {
+  font-weight: 700;
+}
+
+.wrapper_two__info::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -8px;
+  bottom: 67px;
+  border-top: 0 solid transparent;
+  border-left: 35px solid #f3f3f3;
+  border-bottom: 35px solid transparent;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+.wrapper_IMG {
+  bottom: -200px;
+  position: absolute;
+  right: 127px;
+  width: 868px;
+  height: 869px;
+  background-image: url("../IMG/main/section--one/hero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
