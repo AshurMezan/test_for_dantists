@@ -1,4 +1,3 @@
-// main.js
 import { initModalEvents } from './modal.js';
 import { initFormHandler } from './formHandler.js';
 

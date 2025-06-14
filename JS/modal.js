@@ -1,4 +1,3 @@
-// modal.js
 const modal = document.getElementById('modal');
 const openBtn = document.querySelector('.header__callback-button');
 const closeBtn = modal.querySelector('.modal__close');
