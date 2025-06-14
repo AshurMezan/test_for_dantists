@@ -478,3 +478,8 @@
   background-position: center;
   background-size: contain;
 }
+
+.section--two__wrapper_for_contents {
+  max-width: 1290px;
+  margin: 0 auto;
+}
