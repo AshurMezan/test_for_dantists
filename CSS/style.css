@@ -647,6 +647,8 @@
   width: 100%;
   display: flex;
   padding-top: 122px;
+  flex-direction: row;
+  column-gap: 60px;
 }
 
 .name_for_hero {
@@ -657,6 +659,7 @@
   row-gap: 25px;
   color: #202020;
   flex-direction: column;
+  margin-top: 70px;
 }
 .name_for_hero .main__section--three__title {
   font-weight: 700;
@@ -677,6 +680,23 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  margin-left: -230px;
+}
+
+.main__section--three__wrapper_for_img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 506px;
+  height: 506px;
+  transform: translate(-50%, -50%);
+  background-image: url("../IMG/main/section--three/blur.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .main__section--three__info {
@@ -729,4 +749,28 @@
   width: 248px;
   height: 43px;
   cursor: pointer;
+}
+
+.guarantee {
+  max-width: 190px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #41404d;
+}
+.guarantee .guarantee__title {
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: 800;
+}
+.guarantee .guarantee__text {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.wrapper_for_section--three_info, .guarantee {
+  margin-top: 65px;
 }
