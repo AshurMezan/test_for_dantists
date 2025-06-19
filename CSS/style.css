@@ -683,22 +683,6 @@
   margin-left: -230px;
 }
 
-.main__section--three__wrapper_for_img::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 506px;
-  height: 506px;
-  transform: translate(-50%, -50%);
-  background-image: url("../IMG/main/section--three/blur.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .main__section--three__info {
   font-family: "Montserrat", sans-serif;
   color: #444c54;
