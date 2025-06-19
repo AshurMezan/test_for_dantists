@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 @font-face {
@@ -45,6 +46,10 @@
   font-style: normal;
   font-display: swap;
 }
+body {
+  background-color: green;
+}
+
 .wrapper {
   max-width: 1920px;
   margin: 0 auto;
