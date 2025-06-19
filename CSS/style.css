@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 @font-face {
@@ -45,6 +46,10 @@
   font-style: normal;
   font-display: swap;
 }
+body {
+  background-color: green;
+}
+
 .wrapper {
   max-width: 1920px;
   margin: 0 auto;
@@ -430,6 +435,7 @@
   padding: 41px 40px 32px;
   max-width: 373px;
   z-index: 1;
+  position: relative;
 }
 .wrapper_two__info .wrapper-two__text,
 .wrapper_two__info .wrapper-two__author {
@@ -437,6 +443,12 @@
   font-size: 16px;
   line-height: 34px;
   color: #444c54;
+}
+
+.wrapper_two__author--img {
+  position: absolute;
+  left: 40px;
+  top: -30px;
 }
 
 .title {
@@ -493,16 +505,20 @@
 .section--two__wrapper_for_contents {
   max-width: 1500px;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* Базовые стили слайдера */
+/* Слайдер */
 .wrapper_for_slayder {
-  position: relative;
-  width: 1055px;
-  height: 703px;
+  flex: 0 1 66%;
+  max-width: 1055px;
+  aspect-ratio: 1055/703;
   overflow: hidden;
   border-radius: 10px;
+  position: relative;
 }
 
 .slider {
@@ -522,6 +538,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Навигация слайдера */
@@ -556,7 +573,7 @@
   height: 21px;
 }
 
-/* Градиент для текста */
+/* Градиент */
 .slider__item::before {
   content: "";
   position: absolute;
@@ -596,16 +613,19 @@
   font-weight: 700;
 }
 
+/* Блок с описанием */
 .wrapper_for_title_forsection--two {
+  flex: 0 1 32%;
   max-width: 660px;
   padding: 68px 47px;
   border-radius: 16px;
   background-color: rgba(242, 242, 242, 0.8);
   backdrop-filter: blur(22px);
-  position: absolute;
-  top: 137px;
-  z-index: 10;
-  left: 924px;
+  align-self: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: auto;
 }
 
 .section--two__title {
@@ -616,6 +636,7 @@
   color: #367aca;
   text-transform: uppercase;
 }
+
 .section--two__title span {
   font-weight: 600;
   color: #444c54;
@@ -757,12 +778,104 @@
   font-weight: 400;
 }
 
-.wrapper_for_section--three_info, .guarantee {
+.wrapper_for_section--three_info,
+.guarantee {
   margin-top: 65px;
 }
 
-@media (max-width: 1289.9px) {
-  .main__section--three____wrapper_for_contents {
-    max-width: 1170px;
-  }
+/* Контейнер для бургера */
+.burger {
+  position: relative;
+  display: none; /* Скрываем бургер по умолчанию */
+  z-index: 12; /* Чтобы бургер был поверх других элементов */
+}
+
+/* Иконка бургера */
+.burger__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 2;
+  border: 1px solid #fff; /* белая рамка */
+  border-radius: 50%;
+}
+
+.burger__icon span {
+  display: block;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Верхняя и нижняя длиннее */
+.burger__icon span:first-child,
+.burger__icon span:last-child {
+  width: 28px;
+}
+
+.burger__icon span:nth-child(2) {
+  width: 22px;
+  align-self: flex-start;
+}
+
+/* Активное состояние — крест */
+.burger__icon.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger__icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger__icon.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Меню */
+.burger__menu {
+  position: fixed;
+  inset: 0;
+  background-color: #444350;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: 10;
+}
+
+.burger__menu.active {
+  transform: translateY(0);
+}
+
+.burger__menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.burger__menu li {
+  margin: 20px 0;
+}
+
+.burger__menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.burger__menu-content {
+  background: transparent;
+  padding: 20px;
+  z-index: 11;
 }

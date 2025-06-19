@@ -9,13 +9,15 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/adaptive.css" />
     <link rel="stylesheet" href="CSS/style.css" />
+    
     <title>Стоматология</title>
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__wrapper-for-nav">
+         <div class="header__wrapper-for-nav">
           <div class="header__logo">
             <img src="./IMG/header/logo.png" alt="Логотип стоматологии" />
           </div>
@@ -50,8 +52,46 @@
               </p>
               <button class="header__callback-button">Перезвонить мне</button>
             </div>
+          </div> 
+          <!-- Бургер меню -->
+           <div class="burger">
+            <div class="burger__icon" id="burgerToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="burger__menu" id="burgerMenu">
+              <div class="burger__menu-content"> 
+                <!-- Логатип в бургер меню -->
+                 <div class="header__wrapper__for-contacts">
+                  <img
+                    src="./IMG/header/phone.png"
+                    alt="Значёк телефона"
+                    width="30"
+                    height="30"
+                  />
+                  <div class="header__contacts">
+                    <p class="header__contacts-number">+7 (345) 260-82-47</p>
+                    <p class="header__contacts-text">
+                      Ежедневно <span>с 9:00 до 21:00</span>
+                    </p>
+                    <button class="header__callback-button">
+                      Перезвонить мне
+                    </button>
+                  </div>
+                </div> 
+                <!-- Логатип в бургер меню -->
+                 <ul>
+                  <li><a href="#">О клинике</a></li>
+                  <li><a href="#">Расчёт</a></li>
+                  <li><a href="#">Наши врачи</a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+            </nav>
           </div>
-        </div>
+          <!-- Бургер меню закончился-->
+         </div> 
       </header>
       <main>
         <section class="main__section--one">
@@ -111,12 +151,13 @@
                 </p>
                 <p class="wrapper-two__author"><span>Владислав</span></p>
                 <p class="wrapper-two__author">Хирург-имплантолог</p>
+                <img src="./IMG/main/section--one/quotes.png" alt="Кавычки"  class="wrapper_two__author--img" width="66" height="43"/>
               </div>
             </div>
             <div class="wrapper_IMG"></div>
           </div>
         </section>
-        <!-- <section class="main__section--two">
+        <section class="main__section--two">
           <div class="section--two__wrapper_for_contents">
             <div class="wrapper_for_slayder">
               <div class="slider">
@@ -205,13 +246,13 @@
               </p>
             </div>
           </div>
-        </section> -->
+        </section>
         <section class="main__section--three">
           <div class="main__section--three____wrapper_for_contents">
             <div class="name_for_hero">
               <h2 class="main__section--three__title">Дмитрий</h2>
               <p class="main__section--three__text">
-                Стоматолог-хирург- <br>имплантолог
+                Стоматолог-хирург- <br />имплантолог
               </p>
               <p class="main__section--three__text">Cтаж</p>
               <p
@@ -267,7 +308,9 @@
               />
 
               <h2 class="guarantee__title">Пожизненная</h2>
-              <p class="guarantee__text">Гарантия на импланты от производителя</p>
+              <p class="guarantee__text">
+                Гарантия на импланты от производителя
+              </p>
               <img
                 src="./IMG/main/section--three/page.png"
                 alt="Договор"
@@ -276,9 +319,10 @@
                 class="guarantee__img"
               />
               <h2 class="guarantee__title">До 5 лет</h2>
-              <p class="guarantee__text">Гарантии на работу стоматолога по договору</p>
+              <p class="guarantee__text">
+                Гарантии на работу стоматолога по договору
+              </p>
             </div>
-            
           </div>
         </section>
       </main>
@@ -324,5 +368,8 @@
     <script type="module" src="JS/main.js"></script>
     <script src="JS/modal.js"></script>
     <script src="JS/slider.js"></script>
+    <script src="JS/burger.js"></script>
+     
+    </script>
   </body>
 </html>
