@@ -1,5 +1,5 @@
 const modal = document.getElementById('modal');
-const openBtn = document.querySelector('.header__callback-button');
+const openBtns = document.querySelectorAll('.header__callback-button, .main__section--three__info--button');
 const closeBtn = modal.querySelector('.modal__close');
 const overlay = modal.querySelector('.modal__overlay');
 const body = document.body;
@@ -17,7 +17,11 @@ export function closeModal() {
 }
 
 export function initModalEvents() {
-  openBtn.addEventListener('click', openModal);
+  // Добавляем обработчик для всех кнопок открытия
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+  
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 
