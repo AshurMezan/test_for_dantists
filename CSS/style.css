@@ -308,6 +308,7 @@
 
 .wrapper_one {
   max-width: 610px;
+  z-index: 1;
 }
 
 .section--one__wrapper_for_contents {
@@ -660,6 +661,7 @@
   color: #202020;
   flex-direction: column;
   margin-top: 70px;
+  z-index: 1;
 }
 .name_for_hero .main__section--three__title {
   font-weight: 700;
@@ -757,4 +759,10 @@
 
 .wrapper_for_section--three_info, .guarantee {
   margin-top: 65px;
+}
+
+@media (max-width: 1289.9px) {
+  .main__section--three____wrapper_for_contents {
+    max-width: 1170px;
+  }
 }
